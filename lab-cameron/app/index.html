@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html ng-app="cowsayApp">
+  <head>
+    <meta charset="utf-8">
+    <title>Welcome to the Cowsay!</title>
+  </head>
+  <body>
+    <header>
+      <nav ng-controoler="NavigationController as navCtrl">
+        <ul>
+          <li ng-repeat="route in navCtrl.routes">
+            <a href="{{ route.url }}">{{ route.name }}</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section
+        class="container"
+        ng-controller="CowsayController as cowsayCtrl"
+        ng-init="cowsayCtrl.current = 'tux'">
+        <h2>{{ cowsayCtrl.title }}</h2>
+        <pre class="cow">
+          {{ cowsayCtrl.update(cowsayCtrl.text) }}
+        </pre>
+        <form
+          ng-submit="cowsayCtrl.speak(cowsayCtrl.text)"
+          name="cowsayForm"
+          novalidate>
+          <select class="faces" name="cowOptions" ng-model="cowsayCtrl.current">
+            <option ng-repeat="cowfile in cowsayCtrl.cowfiles" value="{{ cowfile }}">{{ cowfile }}</option>
+          </select>
+          <input type="text" ng-model="cowsayCtrl.text">
+          <button type="submit" name="speak">Log it!</button>
+          <div ng-show="cowsayCtrl.spoken">
+            <pre>
+              {{ cowsayCtrl.spoken }}
+            </pre>
+            <button name="undo" ng-click="cowsayCtrl.undo()"></button>
+          </div>
+        </form>
+      </section>
+      <section class="container">
+
+      </section>
+    </main>
+    <footer></footer>
+  </body>
+</html>
