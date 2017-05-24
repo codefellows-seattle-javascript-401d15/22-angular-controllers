@@ -7,7 +7,6 @@ $box-std: 20%;
 $gutter-std: 5%;
 $gutter-sm: $gutter-std / 2;
 
-// // :::: global styles ::::
 
 body {
   font-family: helvetica;
@@ -15,12 +14,22 @@ body {
   background: $brand-primary * 3;
 }
 
+nav {
+  // float: right;
+  padding-left: 65em;
+  padding-top: 2em;
+}
+li {
+  display: inline;
+}
+
 h1 {
   font-size: 1.5em;
+  // padding-top: 2em;
   text-align: center;
   margin-bottom: $gutter-std;
 }
-//
+
 button {
 
   width: $box-std;
@@ -58,6 +67,7 @@ pre {
   font-family: monospace;
   margin: $gutter-std;
 }
+
 
 // // :::: app styles ::::
 //
