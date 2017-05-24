@@ -4,7 +4,9 @@
   "description": "lab 22 JS 401",
   "main": "\u001b[D\u001b[D\u001b[D\u001b[C\u001b[C\u001b[Centry.js",
   "scripts": {
-    "test": "test"
+    "test": "test",
+    "watch": "webpack-dev-server --inline --hot",
+    "build": "webpack"
   },
   "repository": {
     "type": "git",
