@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html ng-app="cowsayApp">
+  <head>
+    <link rel ="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.1.4/angular-material.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.1.4/angular-material.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.1.4/angular-material.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.1.4/angular-material.min.js" type="text/javascript"></script>
+    <!-- <link rel="stylesheet" type="text/css" href="/scss/base.scss"/>
+    <link rel="stylesheet" type="text/css" href="/scss/reset.scss"/>
+    <link rel="stylesheet" type="text/css" href="/scss/main.scss"/> -->
+      <script src="entry.js" type="text/javascript"></script>
+    <meta charset="utf-8">
+    <title>Welcome to Fat Cow!</title>
+
+  </head>
+  <body>
+    <header>
+        <ul>
+          <li ng-repeat="route in navCtrl.routes">
+            <a href="{{ route.url }}">{{ route.name }}</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+
+
+    <section
+      ng-controller="CowsayController as cowsayCtrl"
+      ng-init="cowsayCtrl.current = 'squirrel'">
+
+      <h2>{{ cowsayCtrl.title }}</h2>
+      <pre>
+        {{ cowsayCtrl.update(cowsayCtrl.text) }}
+      </pre>
+
+      <form
+        ng-submit="cowsayCtrl.speak(cowsayCtrl.text)"
+        name="cowsayForm"
+        novalidate>
+
+        <select name="cowOptions" ng-model="cowsayCtrl.current">
+          <option ng-repeat="cow in cowsayCtrl.cowfiles" value="{{ cow }}"> {{ cow }}</option>
+        </select>
+
+        <input type="text" ng-model="cowsayCtrl.text" required>
+        <button type="submit" name="speak">Speak!</button>
+
+        <div ng-show="cowsayCtrl.spoken">
+          <pre>
+            {{ cowsayCtrl.spoken }}
+          </pre>
+          <button type="button" name="undo" ng-click="cowsayCtrl.undo()">Undo!</button>
+        </div>
+      </form>
+
+    </section>
+
+  </main>
+  <footer></footer>
+
+  </body>
+</html>
