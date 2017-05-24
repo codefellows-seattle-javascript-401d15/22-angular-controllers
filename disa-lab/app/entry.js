@@ -1,7 +1,7 @@
 'use strict'
 
-// require('./scss/reset.scss') //Why are these commented out again?
-// require('./scss/main.scss') //Where do we address this functionality?
+require('./scss/reset.scss')
+require('./scss/main.scss')
 
 const angular = require('angular')
 const cowsay = require('cowsay-browser')
@@ -17,14 +17,14 @@ function CowsayController($log) {
   this.title = 'Come a little closer!'
   this.history = []
 
-  cowsay.list((err, cows) => {
+  cowsay.list((err, cows) => {//I think this line is the problem, but I dont' know what is wrong.
     this.cowfiles = cows
     this.current = this.cowfiles[0]
   })
 
-  this.update = function() {
+  this.update = function(input) {
     $log.debug('#update')
-    return cowsay.say({text: input || 'Ah ah ah ah!', f: this.current })
+    return cowsay.say({text: input || 'Ah ah ah ah!', f: this.current})
   }
 
   this.speak = function(input) {
@@ -33,10 +33,10 @@ function CowsayController($log) {
     this.history.push(this.spoken)
   }
 
-this.undo = function() {
-  $log.debug('#undo')
-  let temp = this.history.pop()
-  this.spoken = temp || ''
+  this.undo = function() {
+    $log.debug('#undo')
+    let temp = this.history.pop()
+    this.spoken = temp || ''
   }
 }
 
