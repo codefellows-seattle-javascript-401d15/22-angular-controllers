@@ -37,8 +37,8 @@ function CowsayController($log) {
   this.undo = function() {
     $log.debug('#undo');
     
-    let temp = this.history.pop();
-    this.spoken = temp || '';
+    this.history.pop();
+    this.spoken = this.history[this.history.length-1] || '';
   };
 }
 

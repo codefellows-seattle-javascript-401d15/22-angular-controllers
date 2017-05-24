@@ -8,7 +8,7 @@
     <header>
       <nav ng-controller="NavigationController as navCtrl">
         <ul>
-          <li ng-repeat="route in navCtrl.routes">
+          <li class="links" ng-repeat="route in navCtrl.routes">
             <a href="{{ route.url }}">{{ route.name }}</a>
           </li>
         </ul>
