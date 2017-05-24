@@ -1,5 +1,9 @@
 'use strict';
 
+require('./scss/reset.scss');
+require('./scss/base.scss');
+require('./scss/main.scss');
+
 const angular = require('angular');
 const cowsay = require('cowsay-browser');
 const cowsayApp = angular.module('cowsayApp', []);
@@ -44,15 +48,15 @@ function NavigationController($log) {
 
   this.routes = [
     {
-      name: 'home',
+      name: 'Home',
       url: '/home',
     },
     {
-      name: 'about',
+      name: 'About',
       url: '/about',
     },
     {
-      name: 'contact',
+      name: 'Contact',
       url: '/contact-us',
     },
   ];

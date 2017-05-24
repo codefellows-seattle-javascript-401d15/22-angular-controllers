@@ -1,10 +1,10 @@
 // **** VARS **** //
-$brand-primary: #BADDAD;
-$brand-secondary: #AFAFAF;
+$brand-primary: #5FBF39;
+$brand-secondary: #161614;
 
 $padding: .5em;
 
-$font-size-primary: 1.025em;
+$font-size-primary: .9em;
 
 // **** MIXINS **** //
 @mixin bubble{
@@ -34,20 +34,6 @@ input {
     color: $brand-secondary;
   }
 }
-
-// Don't do this...
-// main {
-//   background-color: $brand-secondary;
-//   .container {
-//     section {
-//       p {
-//         span {
-//
-//         }
-//       }
-//     }
-//   }
-// }
 
 @for $i from 6 through 1 {
   h#{$i} {
