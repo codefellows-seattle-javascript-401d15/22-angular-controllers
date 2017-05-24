@@ -1,20 +1,29 @@
 // :::: $vars ::::
 
+$font-stack: Helvetica, sans-serif;
+$primary-color: #555;
 $brand-primary: #444;
 $btn-primary: $brand-primary / 2;
 $btn-hover: #31b1c1;
 $black: #000;
 $white: #fff;
-$box-std: 40%;
-$gutter-std: 5%;
+$box-std: 96px / 960px * 100%;
+$gutter-std: 2%;
 $gutter-sm: $gutter-std / 2;
 
 // :::: global styles ::::
 
+@mixin spicy {
+  font: 100% $font-stack;
+  background: $white;
+  color: $black;
+}
+
 body {
-  font-family: helvetica;
+  font: 100% $font-stack;
+  color: $primary-color;
   font-size: 2vw;
-  background: $brand-primary * 3;
+  background: #ffb6c1;
 }
 
 h2 {
@@ -23,12 +32,16 @@ h2 {
   margin-bottom: $gutter-std;
 }
 
+div {
+  button {
+    @include spicy;
+  }
+}
+
 button {
-  float: right;
+  @include spicy;
   width: $box-std;
   padding: 2% 0;
-  background: $btn-primary / 3;
-  color: #fff;
   border: none;
   border-radius: 3px;
   cursor: pointer;
@@ -40,8 +53,8 @@ button {
 }
 
 input[type="text"] {
-  float: left;
-  width: $box-std + 10%;
+  // float: left;
+  width: $box-std + 2%;
   margin-right: $gutter-std / 2;
   padding: 2%;
   border: none;
