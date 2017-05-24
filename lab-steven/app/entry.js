@@ -1,7 +1,7 @@
 'use strict';
 
-// require('./scss/reset.scss');
-// require('./scss/main.scss');
+require('./scss/reset.scss');
+require('./scss/main.scss');
 
 const angular = require('angular');
 const cowsay = require('cowsay-browser');
@@ -20,32 +20,32 @@ function CowsayController($log){
   cowsay.list((err, cows) => {
     this.cowfiles = cows;
     this.current = this.cowfiles[0];
-  })
+  });
 
   this.update = function(input){
     $log.debug('#update');
     return cowsay.say({text: input || 'text here', f: this.current});
-  }
+  };
 
 
   this.speak = function(input){
     $log.debug('#speak');
     this.spoken = this.update(input);
     this.history.push(this.spoken);
-  }
+  };
 
   this.undo = function(){
     $log.debug('#undo');
-    // this.history.pop();
-    this.spoken = this.history.pop() || '';
-  }
+    this.history.pop();
+    this.spoken = this.history[this.history.length - 1] || '';
+  };
 
 }
 
 cowsayApp.controller('NavigationController', ['$log', NavigationController]);
 
-function NavigationController(){
-  // $log.debug('#NavigationController');
+function NavigationController($log){
+  $log.debug('#NavigationController');
 
   this.routes = [
     {
@@ -64,5 +64,5 @@ function NavigationController(){
     //   name: 'home';
     //   url: '/home';
     // },
-  ]
+  ];
 }
