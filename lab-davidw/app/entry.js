@@ -1,7 +1,7 @@
 'use strict';
 
-// require('./scss/reset.scss');
-// require('./scss/main.scss');
+require('./scss/reset.scss');
+require('./scss/main.scss');
 
 const angular = require('angular');
 const cowsay = require('cowsay-browser');
@@ -10,7 +10,7 @@ const cowsayApp = angular.module('cowsayApp', []);
 cowsayApp.controller('CowsayController', ['$log', CowsayController]);
 
 function CowsayController($log) {
-  $log.degub('#CowsayController');
+  $log.debug('#CowsayController');
 
   $log.log('check this out', this);
 
@@ -23,21 +23,40 @@ function CowsayController($log) {
   });
 
   this.update = function(input) {
-    $log.debug('#Update');
+    $log.debug('#update');
     return cowsay.say({ text: input || 'rawr', f: this.current });
   };
 
   this.speak = function(input) {
-    $log.debug('#Speak');
+    $log.debug('#speak');
     this.spoken = this.update(input);
     this.history.push(this.spoken);
   };
 
   this.undo = function() {
-    $log.debug('#Undo');
-    let temp = this.history.pop();
-    this.spoken = temp || '';
+    $log.debug('#undo');
+    this.history.pop();
+    this.spoken = this.history[this.history.length -1] || '';
   };
 }
 
-cowsayApp.controller('NavigationController');
+cowsayApp.controller('NavigationController', ['$log', NavigationController]);
+
+function NavigationController($log) {
+  $log.debug('#NavigationController');
+
+  this.routes= [
+    {
+      name: 'home',
+      url: '/home',
+    },
+    {
+      name: 'about',
+      url: '/about',
+    },
+    {
+      name: 'contact',
+      url: '/contact-us',
+    },
+  ];
+}

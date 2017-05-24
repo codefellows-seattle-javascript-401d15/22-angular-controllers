@@ -3,15 +3,19 @@
   <head>
     <meta charset="utf-8">
     <title>Welcome to Meowtown</title>
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
   </head>
   <body>
-    <header></header>
-    <main>
+    <header>
       <nav ng-controller="NavigationController as navCtrl">
         <ul>
-          <li ng-repeat="route navCtrl.routes"></li>
+          <li ng-repeat="route in navCtrl.routes">
+            <a href="{{ route.url }}">{{ route.name }}</a>
+          </li>
         </ul>
       </nav>
+    </header>
+    <main>
       <section
         ng-controller="CowsayController as cowsayCtrl"
         ng-init="coswayCtrl.current = 'meow'">
@@ -25,7 +29,7 @@
           name="cowsayForm"
           novalidate>
           <select name="cowOptions" ng-model="cowsayCtrl.current">
-            <option ng-repeat="cow in cowsayCtrl.cowfiles" value="{{ cow }}"></option>
+            <option ng-repeat="cow in cowsayCtrl.cowfiles" value="{{ cow }}">{{ cow }}</option>
           </select>
 
           <input type="text" ng-model="cowsayCtrl.text" required>
@@ -33,13 +37,14 @@
 
           <div ng-show="cowsayCtrl.spoken">
             <pre>
-            {{ cowsayCtrl.spoken }}
+              {{ cowsayCtrl.spoken }}
             </pre>
-            <button type="button" name="undo">Undo!</button>
+            <button type="button" name="undo" ng-click="cowsayCtrl.undo()">Undo!</button>
           </div>
         </form>
-        
+
       </section>
     </main>
+    <footer></footer>
   </body>
 </html>
