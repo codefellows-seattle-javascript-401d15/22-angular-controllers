@@ -59,4 +59,4 @@ function NavigationController($log) {
       url: '/contact-us'
     }
   ]
-}
+};
