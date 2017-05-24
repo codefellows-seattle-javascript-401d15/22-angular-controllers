@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html ng-app="cowsayApp">
+  <head>
+    <meta charset="utf-8">
+    <title>Welcome to Meowtown</title>
+  </head>
+  <body>
+    <header></header>
+    <main>
+      <nav ng-controller="NavigationController as navCtrl">
+        <ul>
+          <li ng-repeat="route navCtrl.routes"></li>
+        </ul>
+      </nav>
+      <section
+        ng-controller="CowsayController as cowsayCtrl"
+        ng-init="coswayCtrl.current = 'meow'">
+        <h2>{{ cowsayCtrl.title }}</h2>
+        <pre>
+          {{ cowsayCtrl.update(cowsayCtrl.text) }}
+        </pre>
+
+        <form
+          ng-submit="cowsayCtrl.speak(cowsayCtrl.text)"
+          name="cowsayForm"
+          novalidate>
+          <select name="cowOptions" ng-model="cowsayCtrl.current">
+            <option ng-repeat="cow in cowsayCtrl.cowfiles" value="{{ cow }}"></option>
+          </select>
+
+          <input type="text" ng-model="cowsayCtrl.text" required>
+          <button type="submit" name="speak">Speak!</button>
+
+          <div ng-show="cowsayCtrl.spoken">
+            <pre>
+            {{ cowsayCtrl.spoken }}
+            </pre>
+            <button type="button" name="undo">Undo!</button>
+          </div>
+        </form>
+        
+      </section>
+    </main>
+  </body>
+</html>
