@@ -4,6 +4,8 @@ The purpose of this lab is to create a cow that can speak dynamically based on w
 
 In this app, the user can choose to remember the previous animal and message when the `Speak!` button is clicked. This will continue indefinitely. The user can also choose to revert back to a previous animal and message by clicking the `Undo!` button.
 
+The user can also change the animal/image displayed via the dropdown menu
+
 This app uses basic HTML, Javascript, and SCSS for styling. Angular is also applied to the HTML page and updated with webpack.
 
 To build this page, type `npm run build` in the command line. 
