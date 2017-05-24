@@ -32,10 +32,6 @@ Initializing package.json
 ```
 npm init
 
-npm install -S angular cowsay-browser css-loader html-webpack-plugin node-sass sass-loader style-loader webpack
-
-npm install -D webpack-dev-server
-
 npm install -S angular babel-core babel-loader babel-preset-es2015 cowsay-browser css-loader extract-text-webpack-plugin html-webpack-plugin node-sass sass-loader style-loader webpack
 
 npm install -D webpack-dev-server
@@ -54,10 +50,21 @@ The result of installation above.
 
 ```
 "dependencies": {
-
+  "angular": "^1.6.4",
+  "babel-core": "^6.24.1",
+  "babel-loader": "^7.0.0",
+  "babel-preset-es2015": "^6.24.1",
+  "cowsay-browser": "^1.1.8",
+  "css-loader": "^0.28.2",
+  "extract-text-webpack-plugin": "^2.1.0",
+  "html-webpack-plugin": "^2.28.0",
+  "node-sass": "^4.5.3",
+  "sass-loader": "^6.0.5",
+  "style-loader": "^0.18.1",
+  "webpack": "^2.6.0"
 },
 "devDependencies": {
-
+  "webpack-dev-server": "^2.4.5"
 }
 ```
 
@@ -83,7 +90,7 @@ There are no tests for this lab.
 * [Webpack Tutorial](https://webpack.github.io/docs/tutorials/getting-started/)
 
 ## License
-This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/mmpadget) file for details.
+This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/mmpadget/22-angular-controllers/blob/lab-22/lab-padget/LICENSE) file for details.
 
 ## Acknowledgments
 * Code Fellows
