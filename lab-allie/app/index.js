@@ -1,6 +1,5 @@
 'use strict';
 
-// require('./scss/main.scss');
 require('./scss/base.scss');
 require('./scss/reset.scss');
 
