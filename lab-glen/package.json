@@ -2,7 +2,7 @@
   "name": "lab-glen",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "app/entry.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "webpack-dev-server --inline --hot",
@@ -25,6 +25,7 @@
     "webpack": "^2.6.0"
   },
   "devDependencies": {
+    "webpack": "^2.6.0",
     "webpack-dev-server": "^2.4.5"
   }
 }
