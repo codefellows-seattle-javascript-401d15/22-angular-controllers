@@ -56,7 +56,7 @@ function NavigationController($log) {
       url:'/about'
     },
     {
-      nam:'contact',
+      name:'contact',
       url:'/contact'
     }
   ]

@@ -6,12 +6,13 @@
   </head>
   <body>
     <header>
-      <nav ng-controller="NavigationController as navCtrl"
+      <nav ng-controller="NavigationController as navCtrl">
       <ul>
         <li ng-repeat="route in navCtrl.routes">
            <a href="{{ route.url }}">{{ route.name }}</a>
         </li>
       </ul>
+    </nav>
     </header>
     <main>
       <section
