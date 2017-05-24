@@ -1,4 +1,8 @@
-$brand-primary: #444;
+
+@import url('https://fonts.googleapis.com/css?family=Bitter:400i|Merriweather');
+
+
+$brand-primary: #85B79D;
 $btn-primary: #00D5FF / 2;
 $btn-hover: #424B54;
 $black: #000;
@@ -11,30 +15,34 @@ $gutter-sm: $gutter-std / 2;
 body {
   font-family: helvetica;
   font-size: 1em;
-  background: $brand-primary * 3;
+  background: #56CBF9;
 }
 
 nav {
-  // float: right;
+  background-color: #FFFF00;
   padding-left: 65em;
   padding-top: 2em;
 }
+
 li {
   display: inline;
+  font-family: 'Merriweather', serif;
+  font-size: .75em;
 }
 
 h1 {
-  font-size: 1.5em;
-  // padding-top: 2em;
+  color: #694873;
+  background-color: #FFFF00;
+  font-family: 'Bitter';
+  font-size: 2em;
   text-align: center;
-  margin-bottom: $gutter-std;
+  margin-bottom: 1em;
 }
 
 button {
-
   width: $box-std;
   padding: 2% 0;
-  background: $btn-primary;
+  background: #0C1E32;
   color: $white;
   border: none;
   cursor: pointer;
@@ -67,26 +75,3 @@ pre {
   font-family: monospace;
   margin: $gutter-std;
 }
-
-
-// // :::: app styles ::::
-//
-// .container {
-//   float: left;
-//   width: $box-std;
-//   margin: 5%;
-// }
-//
-// .text-binder {
-//   height: 15vw;
-//   font-size: 3vw;
-//   margin: $gutter-std;
-//   padding: 1vw;
-//   color: $white;
-//   background: $brand-primary / 3;
-//   border: dotted .25vw $brand-primary;
-//
-//   + input {
-//     width: 100%;
-//   }
-// }
