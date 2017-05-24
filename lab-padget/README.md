@@ -10,7 +10,7 @@ For more information see:
 * [Lab 22](https://github.com/codefellows-seattle-javascript-401d15/22-angular-controllers)
 
 ## Version
-* 0.1.0
+* 0.1.1
 
 ## Installation
 Please visit the following pages for how to install your project locally.
