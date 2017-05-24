@@ -1,26 +1,7 @@
-![cf](https://i.imgur.com/7v5ASc8.png) Lab 22 - Angular Controllers
+![cf](https://i.imgur.com/7v5ASc8.png) Angular Controllers (return of the cowsay)
 ======
 
-## To Submit this Assignment
-  * create a new branch and work off of the same fork that you made yesterday
-  * push to your repository
-  * submit a pull request to this repository
-  * submit a link to your PR in canvas
-  * write a question and observation on canvas
-
-## Include
-  * `.eslintrc`
-  * `.babelrc`
-  * `.gitignore`
-  * `package.json`
-    * create an npm `watch` script for running `webpack-dev-server --inline --hot`
-    * This will require that you install `webpack-dev-server`
-  * **ignore the build directory**
-  * `webpack.config.js`
-
 ## Description
-  * refactor the previous lab to use the **controller as** syntax
-  * add a `.babelrc` file and use the **babel loader** on your JS files
   * add a form and submit button that will be used to save the current state of the cow's text
     * use the `ng-submit` directive to control the form's on-submit functionality
     * add a button that uses the `ng-click` directive to populate a second `pre` tag with the current `pre` tag state
