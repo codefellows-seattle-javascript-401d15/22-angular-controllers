@@ -1,7 +1,7 @@
 'use strict';
 
-require('/.scss/reset.scss');
-require('/.scss/main.scss');
+require('./scss/main.scss');
+require('./scss/reset.scss');
 
 const angular = require('angular');
 const cowsay = require('cowsay-browser');
@@ -12,7 +12,7 @@ cowsayApp.controller('CowsayController', ['$log', CowsayController]);
 function CowsayController($log) {
   $log.debug('#CowsayController');
   
-  this.title = 'I\'m a cow.';
+  this.title = 'I\'m a small cow.';
   this.history = [];
   
   cowsay.list((err, cows) => {
@@ -23,7 +23,7 @@ function CowsayController($log) {
   this.update = function(input) {
     $log.debug('#update');
     
-    return cowsay.say({text: input || 'Mooooooooooooooo', f: this.current});
+    return cowsay.say({text: input || 'moo', f: this.current});
   };
   
   this.speak = function(input) {
