@@ -9,15 +9,15 @@
       <nav ng-controller="NavigationController as navCtrl"
       <ul>
         <li ng-repeat="route in navCtrl.routes">
-          <a href="{{ route.url }} "
+           <a href="{{ route.url }}">{{ route.name }}</a>
         </li>
       </ul>
     </header>
     <main>
       <section
         ng-controller="CowsayController as cowsayCtrl"
-        ng-init="cowsayCtrl.current = 'squirrel'">
-        <h2>{{ cowsayCtrl.title }}</h2>
+        ng-init="cowsayCtrl.current = 'elephant'">
+        <h1>{{ cowsayCtrl.title }}</h1>
         <pre>
           {{ cowsayCtrl.update(cowsayCtrl.text) }}
         </pre>
@@ -33,18 +33,17 @@
           <input type="text" ng-model="cowsayCtrl.text" required>
           <button type="submit" name="speak">SPEAK!</button>
 
-          <div ng-show="cowsayCtrl.spoken">
-            <pre>
-              {{ cowsayCtrl.spoken }}
-            </pre>
-            <button type="button" name="undo" ng-click="cowsayCtrl.undo()">fucked up</button>
-          </div>
-
         </form>
+
+        <div ng-show="cowsayCtrl.history.length">
+          <pre>
+            {{ cowsayCtrl.currentCow }}
+          </pre>
+          <button type="submit" name="undo" ng-click="cowsayCtrl.undo()">fucked up</button>
+        </div>
 
       </section>
     </main>
-
 
     <footer></footer>
   </body>

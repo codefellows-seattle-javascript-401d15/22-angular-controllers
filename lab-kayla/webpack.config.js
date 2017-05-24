@@ -4,7 +4,7 @@ const HTMLPlugin = require('html-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 module.exports = {
-  entry: `${__dirname}/enrty.js`,
+  entry: `${__dirname}/entry.js`,
   output: {
     filename: 'bundle.js',
     path: `${__dirname}/build`
