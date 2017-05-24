@@ -11,7 +11,7 @@ function CowsayController($log) {
 
   $log.log('check this out', this);
 
-  this.title = 'Welcome to Meowsay';
+  this.title = 'Ninja Turtle Says';
   this.history = [];
 
   cowsay.list((err, cows) => {
@@ -21,8 +21,7 @@ function CowsayController($log) {
 
   this.update = function(input) {
     $log.debug('#update');
-    // return cowsay.say({text: input || 'I\'m a kitty', f: 'meow'});
-    return cowsay.say({text: input || 'moooo', f: this.current});
+    return cowsay.say({text: input || 'Turtle power', f: this.current});
   };
 
   this.speak = function(input) {
@@ -33,8 +32,8 @@ function CowsayController($log) {
 
   this.undo = function() {
     $log.debug('#undo');
-    let temp = this.history.pop();
-    this.spoken = temp || '';
+    this.history.pop();
+    this.spoken = this.history[this.history.length - 1] || '';
   };
 }
 
