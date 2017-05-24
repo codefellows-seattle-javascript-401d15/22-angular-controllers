@@ -15,13 +15,13 @@
       </nav>
     </header>
     <main>
-      <section class=""
+      <section class="container"
         ng-controller="CowsayController as cowsayCtrl"
         ng-init="cowsayCtrl.current = 'small'">
         <h2>{{ cowsayCtrl.title }}</h2>
         <pre>{{ cowsayCtrl.update(cowsayCtrl.text) }}</pre>
         <form
-          nt-submit="cowsayCtrl.speak(cowsayCtrl.text)"
+          ng-submit="cowsayCtrl.speak(cowsayCtrl.text)"
           name="cowsayForm"
           novalidate>
           <select name="cowOptions"
