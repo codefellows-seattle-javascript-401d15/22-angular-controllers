@@ -1,85 +1,56 @@
+// :::: VARS :::: //
+$brand-primary: #261;
+$brand-secondary: #AFAFAF;
 
-// :::: $vars ::::
+$padding: .5em;
 
-$brand-primary: #245;
-$btn-primary: $brand-primary / 2;
-$btn-hover: #31b1c1;
-$black: #000;
-$white: #fff;
-$box-std: 40%;
-$gutter-std: 5%;
-$gutter-sm: $gutter-std / 2;
+$font-size-primary: 1.025em;
 
-// :::: global styles ::::
-
-body {
-  font-family: helvetica;
-  font-size: 2vw;
-  background: $brand-primary * 3;
+// :::: MIXINS :::: //
+@mixin bubble{
+  padding: 2%;
+  border-radius: .25em;
+  font-family: sans-serif;
 }
 
-h2 {
-  font-size: 3vw;
-  text-align: center;
-  margin-bottom: $gutter-std;
+@mixin drop{
+  @include bubble;
+  font-size: $font-size-primary;
 }
 
-button {
-  float: left;
-  width: $box-std;
-  clear: left;
-  padding: 3% 1%;
-  margin: 3% 2%;
-  background: $btn-primary / 3;
+// :::: BASE STYLES :::: //
+html, body {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: $brand-primary;
+}
+
+.navs {
+  @include bubble;
+  display: inline-block;
+}
+
+.cow {
+  width: 25%;
   color: #fff;
-  border: none;
-  border-radius: 3px;
-  cursor: pointer;
-  transition: 350ms all;
+  font-size: 1em;
+}
 
+input {
+  @include bubble;
+  width: 50%;
+  margin: 0;
+  padding: $padding;
   &:hover {
-    background: $btn-hover;
+    color: $brand-secondary;
   }
 }
 
-input[type="text"] {
-  float: left;
-  width: $box-std + 10%;
-  margin-right: $gutter-std / 2;
-  padding: 2%;
-  border: none;
-  border-radius: 3px;
-}
-
-pre {
-  font-family: monospace;
-  margin: $gutter-std;
-}
-
-// :::: app styles ::::
-
-.container {
-  float: left;
-  width: $box-std;
-  margin: 5%;
-}
-
-.faces {
-  margin: auto;
-  width: $box-std;
-  border: 1px solid black;
-}
-
-.text-binder {
-  height: 15vw;
-  font-size: 3vw;
-  margin: $gutter-std;
-  padding: 1vw;
-  color: $white;
-  background: $brand-primary / 3;
-  border: dotted .25vw $brand-primary;
-
-  + input {
-    width: 100%;
+@for $i from 6 through 1 {
+  h#{$i} {
+    color: black;
+    margin-bottom: $font-size-primary / 2;
+    font-size: 9/($i +2) * 1em;
   }
 }
