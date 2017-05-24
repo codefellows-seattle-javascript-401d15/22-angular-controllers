@@ -14,7 +14,7 @@ function CowsayController($log, $scope) {
   $log.debug('#CowsayController')
 
   this.currentCow = ''
-  this.title = 'Welcome to Fatties Cowville'
+  this.title = 'Welcome to Happy Helpers'
   this.history = []
 
   cowsay.list((err, cows) => {

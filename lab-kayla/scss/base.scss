@@ -1,4 +1,4 @@
-$brand-primary: #444;
+$brand-primary: #85B79D;
 $btn-primary: #00D5FF / 2;
 $btn-hover: #424B54;
 $black: #000;
@@ -11,7 +11,7 @@ $gutter-sm: $gutter-std / 2;
 body {
   font-family: helvetica;
   font-size: 1em;
-  background: $brand-primary * 3;
+  background: $brand-primary;
 }
 
 nav {
@@ -21,17 +21,19 @@ nav {
 }
 li {
   display: inline;
+  font-family: 'Merriweather', serif;
+  font-size: .75em;
 }
 
 h1 {
-  font-size: 1.5em;
-  // padding-top: 2em;
+  color: #694873;
+  font-family: 'Bitter', serif;
+  font-size: 2em;
   text-align: center;
   margin-bottom: $gutter-std;
 }
 
 button {
-
   width: $box-std;
   padding: 2% 0;
   background: $btn-primary;
@@ -67,26 +69,3 @@ pre {
   font-family: monospace;
   margin: $gutter-std;
 }
-
-
-// // :::: app styles ::::
-//
-// .container {
-//   float: left;
-//   width: $box-std;
-//   margin: 5%;
-// }
-//
-// .text-binder {
-//   height: 15vw;
-//   font-size: 3vw;
-//   margin: $gutter-std;
-//   padding: 1vw;
-//   color: $white;
-//   background: $brand-primary / 3;
-//   border: dotted .25vw $brand-primary;
-//
-//   + input {
-//     width: 100%;
-//   }
-// }
