@@ -1,6 +1,6 @@
 'use strict';
 
-require('./scss/reset.scss');
+// require('./scss/reset.scss');
 require('./scss/main.scss');
 
 const angular = require('angular');
@@ -61,6 +61,6 @@ function NavigationController($log) {
     {
       name: 'contact',
       url: '/contact-us',
-    }
+    },
   ];
 }

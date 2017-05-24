@@ -11,7 +11,7 @@ module.exports = {
   },
   plugins: [
     new HTMLPlugin({
-      template: `${__dirname}/app/index.html`
+      template: `${__dirname}/app/index.html`,
     }),
     new ExtractTextPlugin('bundle.css'),
   ],
@@ -22,18 +22,18 @@ module.exports = {
         use: [
           'style-loader',
           'css-loader',
-          'sass-loader'
+          'sass-loader',
         ],
       },
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        loader: ['babel-loader']
+        loader: ['babel-loader'],
       },
       {
         test: /\.(eot|woff|ttf|svg).*/,
-        loader: 'url?limit=10000&name=fonts/[hash].[ext]'
-      }
-    ]
-  }
+        loader: 'url?limit=10000&name=fonts/[hash].[ext]',
+      },
+    ],
+  },
 };
