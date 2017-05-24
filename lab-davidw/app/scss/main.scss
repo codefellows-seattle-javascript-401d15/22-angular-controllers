@@ -1,3 +1,4 @@
+
 // :::: $vars ::::
 
 $brand-primary: #2EA0A8;
@@ -9,29 +10,54 @@ $white: #fff;
 $box-std: 40%;
 $gutter-std: 5%;
 $gutter-sm: $gutter-std / 2;
+$padding: .5em;
+$font-size-primary: 2vw;
+
+// **** MIXINS **** //
+
+@mixin margin {
+  margin: 2em;
+}
+
+@mixin bubble {
+  border-radius: .25em;
+  font-family: sans-serif;
+}
+
+@mixin drop {
+  @include bubble;
+  font-size: $font-size-primary / 1.05;
+}
 
 // :::: global styles ::::
 
+
 body {
+  @include margin
   font-family: 'Indie Flower', cursive;
-  font-size: 2vw;
+  font-size: $font-size-primary;
   background: linear-gradient(to bottom, $brand-secondary, $brand-primary);
 }
 
 h2 {
-  font-size: 3vw;
+  font-size: 5vw;
   text-align: center;
   margin-bottom: $gutter-std;
 }
 
+select {
+  @include drop
+  width: $box-std / 2;
+}
+
 button {
+  font-size: $font-size-primary;
   float: right;
-  width: $box-std;
+  width: $box-std / 1.8;
   padding: 2% 0;
-  background: $btn-primary / 3;
+  background: $btn-primary * 2.75;
   color: #fff;
-  border: none;
-  border-radius: 3px;
+  @include bubble;
   cursor: pointer;
   transition: 350ms all;
 
@@ -41,6 +67,7 @@ button {
 }
 
 input[type="text"] {
+  @include bubble;
   float: left;
   width: $box-std + 10%;
   margin-right: $gutter-std / 2;
@@ -62,7 +89,7 @@ pre {
   margin: 5%;
 }
 
-.text-binder {  
+.text-binder {
   height: 15vw;
   font-size: 3vw;
   margin: $gutter-std;
