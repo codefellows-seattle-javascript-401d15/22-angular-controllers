@@ -1,56 +1,64 @@
-// $brand-primary: #444;
-// $btn-primary: $brand-primary / 2;
-// $btn-hover: #31b1c1;
-// $black: #000;
-// $white: #fff;
-// $box-std: 40%;
-// $gutter-std: 5%;
-// $gutter-sm: $gutter-std / 2;
-//
+$brand-primary: #444;
+$btn-primary: #00D5FF / 2;
+$btn-hover: #424B54;
+$black: #000;
+$white: #fff;
+$box-std: 20%;
+$gutter-std: 5%;
+$gutter-sm: $gutter-std / 2;
+
 // // :::: global styles ::::
+
+body {
+  font-family: helvetica;
+  font-size: 1em;
+  background: $brand-primary * 3;
+}
+
+h1 {
+  font-size: 1.5em;
+  text-align: center;
+  margin-bottom: $gutter-std;
+}
 //
-// body {
-//   font-family: helvetica;
-//   font-size: 2vw;
-//   background: $brand-primary * 3;
-// }
-//
-// h2 {
-//   font-size: 3vw;
-//   text-align: center;
-//   margin-bottom: $gutter-std;
-// }
-//
-// button {
-//   float: right;
-//   width: $box-std;
-//   padding: 2% 0;
-//   background: $btn-primary / 3;
-//   color: #fff;
-//   border: none;
-//   border-radius: 3px;
-//   cursor: pointer;
-//   transition: 350ms all;
-//
-//   &:hover {
-//     background: $btn-hover;
-//   }
-// }
-//
-// input[type="text"] {
-//   float: left;
-//   width: $box-std + 10%;
-//   margin-right: $gutter-std / 2;
-//   padding: 2%;
-//   border: none;
-//   border-radius: 3px;
-// }
-//
-// pre {
-//   font-family: monospace;
-//   margin: $gutter-std;
-// }
-//
+button {
+
+  width: $box-std;
+  padding: 2% 0;
+  background: $btn-primary;
+  color: $white;
+  border: none;
+  cursor: pointer;
+  transition: 350ms all;
+
+  &:hover {
+    background: $btn-hover;
+  }
+}
+
+section {
+  text-align: center;
+}
+
+select {
+  margin-left: 50px;
+}
+
+input[type="text"] {
+
+  width: $box-std;
+  height: $box-std / 2;
+  margin-right: $gutter-std / 2;
+  padding: 2%;
+  border: none;
+  border-radius: 3px;
+}
+
+pre {
+  font-family: monospace;
+  margin: $gutter-std;
+}
+
 // // :::: app styles ::::
 //
 // .container {
