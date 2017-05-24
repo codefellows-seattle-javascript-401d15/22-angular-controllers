@@ -1,0 +1,73 @@
+// ** VARS ** //
+$brand-primary: #F9CDAD;
+$brand-links: #FE4365;
+$brand-links-hover: #FC9D9A;
+$heading-color: #83AF90;
+$brand-main-font: Helvetica;
+$brand-secondary-font: Courier;
+$padding: .5em;
+$margin-left: 35%;
+
+// ** MIXINS ** //
+@mixin button {
+  border-radius: .3em;
+  background-color: $brand-links-hover;
+}
+
+@mixin field {
+  border-radius: .7em;
+  border-color: $brand-links-hover;
+}
+
+// ** BASE STYLES ** //
+body {
+  background-color: $brand-primary;
+  // font-family: Helvetica;
+  // font-family: $brand-main-font;
+}
+
+a {
+  color: $brand-links;
+  // padding: $padding;
+  padding-top: 10%;
+
+  // font-family: $brand-main-font;
+  // font-family: Arial;
+  &:hover {
+    color: $brand-links-hover;
+  }
+}
+
+li {
+  font-family: sans-serif;
+  font-family: $brand-main-font;
+  // padding-top: 10%;
+  display: inline;
+}
+
+button {
+  @include button;
+  padding: $padding;
+  &:hover {
+    background-color: $brand-links;
+    color: white;
+  }
+}
+
+input {
+  @include field;
+}
+
+h2 {
+  font-size: 3vw;
+  color: $heading-color;
+  // text-align: center;
+  // margin-bottom: $gutter-std;
+}
+
+.container {
+  // text-align: center;
+  font-size: 3vw;
+  // margin-left: 25%;
+  margin-left: $margin-left;
+}
