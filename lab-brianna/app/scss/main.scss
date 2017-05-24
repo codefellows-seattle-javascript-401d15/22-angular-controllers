@@ -11,12 +11,17 @@ $gutter-std: 5%;
 $gutter-sm: $gutter-std / 2;
 $font-family: 'Metamorphous', cursive;
 
+@mixin primary-background {
+  background-color: $brand-primary;
+  border: 1px solid black;
+}
+
 
 // :::: global styles ::::
 
 
 body {
-  background-color: $brand-primary;
+  @include primary-background;
   font-size: 2vw;
 }
 
