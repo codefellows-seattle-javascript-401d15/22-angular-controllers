@@ -1,3 +1,7 @@
+
+@import url('https://fonts.googleapis.com/css?family=Bitter:400i|Merriweather');
+
+
 $brand-primary: #85B79D;
 $btn-primary: #00D5FF / 2;
 $btn-hover: #424B54;
@@ -11,14 +15,15 @@ $gutter-sm: $gutter-std / 2;
 body {
   font-family: helvetica;
   font-size: 1em;
-  background: $brand-primary;
+  background: #56CBF9;
 }
 
 nav {
-  // float: right;
+  background-color: #FFFF00;
   padding-left: 65em;
   padding-top: 2em;
 }
+
 li {
   display: inline;
   font-family: 'Merriweather', serif;
@@ -27,16 +32,17 @@ li {
 
 h1 {
   color: #694873;
-  font-family: 'Bitter', serif;
+  background-color: #FFFF00;
+  font-family: 'Bitter';
   font-size: 2em;
   text-align: center;
-  margin-bottom: $gutter-std;
+  margin-bottom: 1em;
 }
 
 button {
   width: $box-std;
   padding: 2% 0;
-  background: $btn-primary;
+  background: #0C1E32;
   color: $white;
   border: none;
   cursor: pointer;
