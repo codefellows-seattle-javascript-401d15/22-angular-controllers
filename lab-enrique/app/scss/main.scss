@@ -1,5 +1,4 @@
-// :::: Vars ::::
-
+// :::: Vars ::::]
 $brand-primary: #777;
 $btn-primary: $brand-primary / 2;
 $black: #000;
@@ -14,13 +13,13 @@ $white: #fff;
 
 @mixin fonter{
     font-family: comic;
-
+    font-size: .50em;
 }
 
 // :::: base styles ::::
 
 body {
-  font-family: comic;
+  font-family: times;
   font-size: 2vw;
   background: #F0D817;
 }
@@ -34,8 +33,15 @@ h2{
 pre{
   @include board;
   height: 20em;
-  width: 25em;
+  width: 50em;
   margin: 1em;
   padding: 1em;
 
+}
+
+
+#nav-bar{
+  @include fonter;
+  margin: .2em;
+  display: inline-block;
 }
