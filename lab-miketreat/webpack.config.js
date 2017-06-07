@@ -10,28 +10,22 @@ module.exports = {
     path: `${__dirname}/build`,
   },
   plugins: [
-    new HTMLPlugin({
-      template: `${__dirname}/app/index.html`,
-    }),
+    new HTMLPlugin({template: `${__dirname}/app/index.html`}),
     new ExtractTextPlugin('bundle.css'),
   ],
   module: {
     loaders: [
       {
         test: /\.scss$/,
-        use: [
-          'style-loader',
-          'css-loader',
-          'sass-loader',
-        ],
+        use:['style-loader','css-loader','sass-loader'],
       },
       {
-        test: /\.js$/,
+        test:/\.js$/,
         exclude: /node_modules/,
         loader: ['babel-loader'],
       },
       {
-        test: /\.(eot|woff|ttf|svg).*/,
+        test:/\.(eot|woff|tff|svg).*/,
         loader: 'url?limit=10000&name=fonts/[hash].[ext]',
       },
     ],
