@@ -1,63 +1,62 @@
 'use strict';
 
 require('./scss/base.scss');
-require('./scss/reset.scss');
+// require('./scss/reset.scss');
+// need to require both scss files in?
 
 const angular = require('angular');
 const cowsay = require('cowsay-browser');
 const cowsayApp = angular.module('cowsayApp', []);
 
-cowsayApp.controller('CowsayController', ['$log', CowsayController]);
+cowsayApp.controller('CowsayController', ['$log', CowsayController])
 
 function CowsayController($log) {
   $log.debug('#CowsayController');
-  
-  this.title = 'I\'m a small cow.';
+  $log.log('check this out ', this);
+
+  this.title = 'Welcome to Cowville';
   this.history = [];
-  
+
   cowsay.list((err, cows) => {
     this.cowfiles = cows;
     this.current = this.cowfiles[0];
   });
-  
+
   this.update = function(input) {
     $log.debug('#update');
-    
-    return cowsay.say({text: input || 'moo', f: this.current});
-  };
-  
+    return cowsay.say({text: input || 'moooo', f: this.current});
+  }
+
   this.speak = function(input) {
     $log.debug('#speak');
-    
     this.spoken = this.update(input);
     this.history.push(this.spoken);
-  };
-  
+  }
+
   this.undo = function() {
     $log.debug('#undo');
-    
-    this.history.pop();
-    this.spoken = this.history[this.history.length-1] || '';
-  };
+    let temp = this.history.pop();
+    this.spoken = temp || '';
+  }
 }
 
-cowsayApp.controller('NavigationController', ['$log', NavigationController]);
+cowsayApp.controller('NavigationController', ['$log', NavigationController])
 
 function NavigationController($log) {
-  $log.debug('#NavigationController');
-  
+  $log.debug('#NavigationController')
+
   this.routes = [
     {
-      name: 'Home',
-      url: '/home',
+      name: 'home',
+      url: '/home'
     },
     {
-      name: 'About',
-      url: '/about',
+      name: 'about',
+      url: '/about'
     },
     {
-      name: 'Contact Us',
-      url: '/contact-us',
+      name: 'contact',
+      url: '/contact-us'
     },
-  ];
+  ]
 }
