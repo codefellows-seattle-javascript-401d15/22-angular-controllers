@@ -1,42 +1,55 @@
 
 @import url('https://fonts.googleapis.com/css?family=Bitter:400i|Merriweather');
 
-
 $brand-primary: #85B79D;
-$btn-primary: #00D5FF / 2;
 $btn-hover: #424B54;
 $black: #000;
 $white: #fff;
 $box-std: 20%;
 $gutter-std: 5%;
-$gutter-sm: $gutter-std / 2;
 
 
 body {
   font-family: helvetica;
   font-size: 1em;
-  background: #56CBF9;
+  background: #CCDBDC;
 }
 
 nav {
-  background-color: #FFFF00;
-  padding-left: 65em;
-  padding-top: 2em;
+  background-color: #80CED7;
+  width: 100%;
+  // padding-left: 65em;
+  // padding-top: 2em;
+  // z-index: -2;
 }
 
-li {
-  display: inline;
-  font-family: 'Merriweather', serif;
-  font-size: .75em;
-}
+// li {
+//   display: inline;
+//   font-family: 'Merriweather', serif;
+//   font-size: 80%;
+// }
 
 h1 {
-  color: #694873;
-  background-color: #FFFF00;
+  height: 15%;
+  width: 100%;
+  color: black;
+  background-color: #007EA7;
   font-family: 'Bitter';
-  font-size: 2em;
+  font-size: 200%;
   text-align: center;
-  margin-bottom: 1em;
+  padding: 1em;
+}
+
+.about {
+  font-family: 'Merriweather', serif;
+  text-align: center;
+  font-size: .70em;
+  width: 50%;
+  margin: auto;
+  background-color: #80CED7;
+  margin-top: 5%;
+  padding: 2%;
+  border-radius: 5px;
 }
 
 button {
@@ -62,7 +75,6 @@ select {
 }
 
 input[type="text"] {
-
   width: $box-std;
   height: $box-std / 2;
   margin-right: $gutter-std / 2;
