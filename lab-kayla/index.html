@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html ng-app="cowsayApp">
+  <head>
+    <meta charset="utf-8">
+    <title>Happy Cow</title>
+    <link href="https://fonts.googleapis.com/css?family=Bitter:400i|Merriweather" rel="stylesheet">
+  </head>
+  <body>
+    <header>
+    </header>
+    <main>
+      <div class="title" ng-controller="CowsayController as cowsayCtrl">
+        <h1>{{ cowsayCtrl.title }}</h1>
+      </div>
+
+      <div class="about">
+        <p>Use the drop-down menu to choose your animal. Then use the text box to change what it says. Click the SPEAK button and your creation will show below. Create as many as you would like, and use the UNDO button to go back to your previous creation.</p>
+      </div>
+      <!-- <nav ng-controller="NavigationController as navCtrl"> -->
+        <!-- <ul>
+          <li ng-repeat="route in navCtrl.routes">
+            <a href="{{ route.url }}">{{ route.name }}</a>
+          </li>
+        </ul> -->
+      <!-- </nav> -->
+
+      <section
+        ng-controller="CowsayController as cowsayCtrl"
+        ng-init="cowsayCtrl.current = 'elephant'">
+
+        <pre>
+          {{ cowsayCtrl.update(cowsayCtrl.text) }}
+        </pre>
+
+        <form
+          ng-submit="cowsayCtrl.speak(cowsayCtrl.text)"
+          name="cowsayForm"
+          novalidate="true">
+          <select name="cowOptions" ng-model="cowsayCtrl.current">
+            <option ng-repeat="cow in cowsayCtrl.cowfiles" value="{{ cow }}">{{ cow }}</option>
+          </select>
+
+          <input type="text" ng-model="cowsayCtrl.text" required>
+          <button type="submit" name="speak">SPEAK!</button>
+
+        </form>
+
+        <div ng-show="cowsayCtrl.history.length">
+          <pre>
+            {{ cowsayCtrl.currentCow }}
+          </pre>
+          <button type="submit" name="undo" ng-click="cowsayCtrl.undo()">UNDO</button>
+        </div>
+
+      </section>
+    </main>
+
+    <footer></footer>
+  </body>
+</html>

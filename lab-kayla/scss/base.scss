@@ -1,0 +1,89 @@
+
+@import url('https://fonts.googleapis.com/css?family=Bitter:400i|Merriweather');
+
+$brand-primary: #85B79D;
+$btn-hover: #424B54;
+$black: #000;
+$white: #fff;
+$box-std: 20%;
+$gutter-std: 5%;
+
+
+body {
+  font-family: helvetica;
+  font-size: 1em;
+  background: #CCDBDC;
+}
+
+nav {
+  background-color: #80CED7;
+  width: 100%;
+  // padding-left: 65em;
+  // padding-top: 2em;
+  // z-index: -2;
+}
+
+// li {
+//   display: inline;
+//   font-family: 'Merriweather', serif;
+//   font-size: 80%;
+// }
+
+h1 {
+  height: 15%;
+  width: 100%;
+  color: black;
+  background-color: #007EA7;
+  font-family: 'Bitter';
+  font-size: 200%;
+  text-align: center;
+  padding: 1em;
+}
+
+.about {
+  font-family: 'Merriweather', serif;
+  text-align: center;
+  font-size: .70em;
+  width: 50%;
+  margin: auto;
+  background-color: #80CED7;
+  margin-top: 5%;
+  padding: 2%;
+  border-radius: 5px;
+}
+
+button {
+  width: $box-std;
+  padding: 2% 0;
+  background: #0C1E32;
+  color: $white;
+  border: none;
+  cursor: pointer;
+  transition: 350ms all;
+
+  &:hover {
+    background: $btn-hover;
+  }
+}
+
+section {
+  text-align: center;
+}
+
+select {
+  margin-left: 50px;
+}
+
+input[type="text"] {
+  width: $box-std;
+  height: $box-std / 2;
+  margin-right: $gutter-std / 2;
+  padding: 2%;
+  border: none;
+  border-radius: 3px;
+}
+
+pre {
+  font-family: monospace;
+  margin: $gutter-std;
+}
